@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="profile/crowdrelay-brand-mark.png" width="120" alt="CrowdRelay" />
+  <img src="crowdrelay-brand-mark.png" width="120" alt="CrowdRelay" />
 </p>
 
 <h1 align="center">CrowdRelay</h1>
