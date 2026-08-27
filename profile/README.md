@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="crowdrelay-brand-mark.png" width="120" alt="CrowdRelay" />
+  <img src="profile/crowdrelay-brand-mark.png" width="120" alt="CrowdRelay" />
 </p>
 
 <h1 align="center">CrowdRelay</h1>
@@ -76,24 +76,24 @@ The control plane proxies requests transparently via HMAC-signed tokens. If the 
 
 ```
                  ┌──────────────────────────────────────────┐
-                 │             CrowdRelay Core               │
-                 │         Rust / Axum / Postgres            │
+                 │  CrowdRelay Core                         │
+                 │  Rust / Axum / Postgres                  │
                  │                                          │
-                 │   Autopilot (21 contexts)   Fan Graph     │
-                 │   Outbox / Delivery         Consents       │
-                 │   Ticketing / Merch          Referrals     │
-                 │   Ad Conversion (LISTEN)     Draws         │
-                 │   Audience Graph             Beacon Net    │
-                 └──────┬──────────┬──────────┬──────────────┘
-                        │          │          │
-              ┌─────────┴──┐  ┌───┴─────┐  ┌──┴──────────────┐
-              │  Control   │  │ Agents  │  │    Clients      │
-              │  Plane     │  │ (LLM)   │  │                 │
-              │            │  │         │  │  virya.music    │
-              │ Provision  │  │ Pitch   │  │  Signal (app)   │
-              │ Runtime    │  │ Social  │  │  Synesthesia    │
-              │ Audit      │  │ Analyze │  │                 │
-              └────────────┘  └─────────┘  └─────────────────┘
+                 │  Autopilot (21 contexts)   Fan Graph     │
+                 │  Outbox / Delivery         Consents      │
+                 │  Ticketing / Merch          Referrals    │
+                 │  Ad Conversion (LISTEN)     Draws        │
+                 │  Audience Graph             Beacon Net   │
+                 └──┬──────────────┬─────────────────┬──────┘
+                    │              │                 │
+              ┌─────┴────┐    ┌────┴────┐    ┌───────┴────────┐
+              │ Control  │    │ Agents  │    │   Clients      │
+              │ Plane    │    │ (LLM)   │    │                │
+              │          │    │         │    │ virya.music    │
+              │ Provision│    │ Pitch   │    │ Signal (app)   │
+              │ Runtime  │    │ Social  │    │ Synesthesia    │
+              │ Audit    │    │ Analyze │    │                │
+              └──────────┘    └─────────┘    └────────────────┘
 ```
 
 Email, n8n, Stripe, Calendar, Bandsintown and LLM-assisted copy are adapters, not sources of truth. A 200 response proves request handling, not delivery — the transactional outbox owns durability, retries and dead-state inspection.
