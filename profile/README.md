@@ -14,25 +14,62 @@
 
 ---
 
-## What it is
+**We are building software that can actually run operations.**
 
-CrowdRelay is a platform that runs the entire fan-growth operation for a music label or artist roster from one seat. It owns the durable business state — fans and consent, events, tickets, merch, referrals, outreach, community engagement — and makes deterministic decisions about what to do next, within explicit authority limits.
+CrowdRelay started with a simple question:
 
-The first tenant running it in production is [Virya](https://virya.music). Onboarding another act or festival is workspace provisioning, not a fork.
+> What happens when AI stops being a copilot and starts being responsible for getting things done?
 
-## What it does
+We are building toward an operating system where software can:
 
-**Aggregate.** Fans come from every side of the internet — Reddit, Meta, Spotify, Bandsintown, press, live shows, community forums — into a single fan graph with consent, lifecycle stage, and engagement history.
+observe  
+→ decide  
+→ act  
+→ measure  
+→ learn  
+→ act again
 
-**Grow.** A deterministic engine (the Autopilot) evaluates twenty-plus growth contexts on every cycle: ticket yield, merchandising, booking opportunities, outreach to curators and press, content supply, promotion budget, show operations, community engagement, and more. Each action passes through confidence gates, authority levels, budget ceilings, and deliverability halts before anything is sent.
+The first domain is music.
 
-**Convert.** The platform closes the loop: tickets, merch, attendance, and referrals — all tracked, measured, and fed back into the next decision cycle. Attribution is honest: smart-link clicks are causal; follower movement after a campaign is correlational, always labelled as such.
+The goal is not another dashboard, assistant, or workflow builder.
 
-## What it solves
+The goal is an autonomous operating layer that can run real audience growth and operational work while staying inside explicit authority, budgets, and safety limits.
 
-Music teams juggle a dozen tools that don't talk to each other: a spreadsheet for fans, an email platform for campaigns, a separate tool for ads, a Slack thread for outreach tracking, and no unified view of who a fan is or what they've done. Decisions are reactive, measurement is anecdotal, and growth is a side effect of busywork.
+## The idea
 
-CrowdRelay replaces that with one system that holds the fan graph, makes decisions, executes work through external services, measures what happened, and learns from it. The operator sets the posture and the budget; the platform does the rest within those limits.
+AI is good at producing things.
+
+The harder problem is deciding:
+
+- what should happen
+- whether it should happen now
+- what the system is allowed to do
+- whether it actually worked
+- what to do differently next time
+
+CrowdRelay is built around that loop.
+
+## Projects
+
+| Project | What it is |
+|---|---|
+| [crowdrelay](https://github.com/CrowdRelay/crowdrelay) | Core business state, decision engine, execution and learning |
+| [crowdrelay-agents](https://github.com/CrowdRelay/crowdrelay-agents) | Model-powered workers for creative and language tasks |
+| [crowdrelay-control-plane](https://github.com/CrowdRelay/crowdrelay-control-plane) | Operator and control plane |
+| [virya](https://github.com/CrowdRelay/virya) | Public artist platform |
+| [virya-signal](https://github.com/CrowdRelay/virya-signal) | Mobile fan and staff client |
+| [synesthesia](https://github.com/CrowdRelay/synesthesia) | Interactive music project |
+
+## North star
+
+**Get fans.**
+
+Everything else exists to improve the system's ability to do that reliably.
+
+better decisions  
+→ better actions  
+→ better outcomes  
+→ better decisions
 
 ## Ecosystem
 
