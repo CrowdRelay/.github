@@ -1,10 +1,10 @@
-<h1 align="center">CrowdRelay</h1>
+<h1>CrowdRelay</h1>
 
-<p align="center">
+<p>
   <strong>The growth-operations platform for labels, artist rosters, and festivals.</strong>
 </p>
 
-<p align="center">
+<p>
   Aggregate fans from everywhere. Grow them for real. Convert them into ticket buyers, merch customers, and lifelong supporters.
 </p>
 
