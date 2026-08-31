@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="crowdrelay-brand-mark.png" width="120" alt="CrowdRelay" />
-</p>
-
 <h1 align="center">CrowdRelay</h1>
 
 <p align="center">
