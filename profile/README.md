@@ -52,12 +52,13 @@ CrowdRelay preserves ambiguous outcomes, supports reconciliation, and keeps exec
 It is responsible for areas such as:
 
 - opportunity evaluation
-- decision value
-- experimentation
-- evidence
-- causal learning
-- optimization
-- exploration
+- decision value and expected free energy
+- experimentation and treatment effects
+- evidence grading and attribution
+- causal learning and credit allocation
+- portfolio optimization
+- exploration vs exploitation
+- strategy learning and calibration
 
 LLMs can generate drafts, analyses, and other bounded outputs.
 
@@ -120,30 +121,30 @@ Evidence is kept separate from causal interpretation, and experiment/learning co
 
 ## Growth operations
 
-The current platform includes capabilities around:
+The platform includes capabilities around:
 
-- fan and audience data
-- growth metrics
-- social and platform connections
-- outreach
-- experimentation
-- ticketing
-- merch
-- operational automation
-- measurement and learning
-
-The platform is currently being extended toward broader community intelligence: understanding where relevant audiences and conversations exist, what they care about, and which opportunities are worth testing.
+- fan and audience data across 18 connection platforms (Meta, TikTok, Reddit, Spotify, YouTube, Facebook, Instagram, Soundcloud, Discord, Telegram, Last.fm, Deezer, Discogs, Bluesky, Bandcamp, X, Bandsintown, Google Ads)
+- growth metrics and growth debt tracking
+- community intelligence — subreddit scanning, audience research, target discovery
+- social posting (Discord, Telegram) with manual approval mode
+- outreach — press pitches, community engagement, signal invites
+- reply triage — incoming engagement sorted by disposition
+- creative supply — campaign analysis, growth strategy drafts seeded with live tenant data
+- experimentation with evidence-graded attribution (randomized holdout, matched quasi-experiment, deterministic, modeled, pre-post, observational)
+- ticketing, merch, and show operations
+- operational automation via n8n workflows
+- measurement and learning — the brain learns from every executed action
 
 ## Architecture
 
 | Repository | Role |
 |---|---|
-| [**crowdrelay**](https://github.com/CrowdRelay/crowdrelay) | Core platform — business state, decisions, execution, evidence, learning, fan graph, ticketing, merch and outreach |
-| [**crowdrelay-agents**](https://github.com/CrowdRelay/crowdrelay-agents) | Model-powered workers for bounded creative and language tasks |
-| [**crowdrelay-control-plane**](https://github.com/CrowdRelay/crowdrelay-control-plane) | Operator and control plane |
-| [**virya**](https://github.com/CrowdRelay/virya) | Public artist platform |
-| [**virya-signal**](https://github.com/CrowdRelay/virya-signal) | Mobile fan and staff client |
-| [**synesthesia**](https://github.com/CrowdRelay/synesthesia) | Interactive music project |
+| [**crowdrelay**](https://github.com/CrowdRelay/crowdrelay) | Core platform — business state, 22-context Autopilot, outbox delivery, fan graph, ticketing, merch, outreach, community intelligence |
+| [**crowdrelay-agents**](https://github.com/CrowdRelay/crowdrelay-agents) | LLM worker service — 10 templates, 10 providers, Reddit authenticated scraping, chat widget |
+| [**crowdrelay-control-plane**](https://github.com/CrowdRelay/crowdrelay-control-plane) | Operator plane — 19 operator pages, tenant provisioning, runtime health, automation events, notifiers, growth steering |
+| [**virya**](https://github.com/CrowdRelay/virya) | Public website — tickets, merch, AREA game, staff panel, EPK, 80 server routes |
+| [**virya-signal**](https://github.com/CrowdRelay/virya-signal) | Mobile client — fan wallet, ticket scanning, staff operations, autopilot chief of staff, Android Play Store |
+| [**synesthesia**](https://github.com/CrowdRelay/synesthesia) | Interactive album — 11 rooms, Godot + Rust, web and Android, draw entry |
 
 ## Safety
 
